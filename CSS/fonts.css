@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-Regular'),
+        local('MontserratRegular'),
+        local('Montserrat Regular'),
+        url('../fonts/AnyConv.com__Montserrat-Regular.woff2'), format('woff2'),
+        url('../fonts/AnyConv.com__Montserrat-Regular.woff'), format('woff'),
+        url('../fonts/Montserrat-Regular.ttf'), format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Light'), local('Montserrat-Light'),
+        url('../fonts/AnyConv.com__Montserrat-Light.woff2'), format('woff2'),
+        url('../fonts/AnyConv.com__Montserrat-Light.woff'), format('woff2'),
+        url('../fonts/Montserrat-Light.ttf'), format('ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-Medium'),
+        local('MontserratMedium'),
+        local('Montserrat Medium'),
+        url('../fonts/AnyConv.com__Montserrat-Medium.woff2'), format('woff2'),
+        url('../fonts/AnyConv.com__Montserrat-Medium.woff'), format('woff'),
+        url('../fonts/Montserrat-Medium.ttf'), format('ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-ExtraLight'),
+        local('MontserratExtraLight'),
+        local('Montserrat ExtraLight'),
+        url('../fonts/AnyConv.com__Montserrat-ExtraLight.woff2'), format('woff2'),
+        url('../fonts/AnyConv.com__Montserrat-ExtraLight.woff'), format('woff'),
+        url('../fonts/Montserrat-ExtraLight.ttf'), format('ttf');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
