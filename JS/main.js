@@ -120,7 +120,14 @@ window.addEventListener('DOMContentLoaded', () => {
     //MODAL
 
     const modalOpenBtn = document.querySelectorAll('[data-modalOpen]'),
-        modal = document.querySelector('[data-modal]');
+        modal = document.querySelector('[data-modal]'),
+        mrazBtn = document.querySelector('[data-btn-post'),
+        mraz = document.querySelector('.mraz');
+
+    mrazBtn.addEventListener('click', e => {
+        mraz.style.display = 'block';
+    });
+
 
     function openModal(selector) {
         selector.style.display = 'block';
@@ -159,7 +166,10 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.addEventListener('scroll', openModalByScroll);
+    window.addEventListener('scroll', () => {
+        openModalByScroll();
+    }, { once: true });
+
 
 
 });
