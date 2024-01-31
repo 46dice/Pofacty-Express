@@ -19,13 +19,13 @@
                 </a>
                 <nav class="header__nav nav">
                     <ul class="nav__items">
-                        <a class="nav__link" href="#">
+                        <a class="nav__link" href="#section-aboutus">
                             <li>О нас</li>
                         </a>
-                        <a class="nav__link" href="#">
+                        <a class="nav__link" href="#section-price">
                             <li>Наши услуги</li>
                         </a>
-                        <a class="nav__link" href="#">
+                        <a class="nav__link" href="#section-contact">
                             <li>Контакты</li>
                         </a>
                     </ul>
@@ -73,7 +73,7 @@
                     </div>
 
                     <span class="prev__text">Фулфилмент, который сделает все за Вас</span>
-                    <button class="prev__btn" type="button">
+                    <button  data-modalOpen class="prev__btn" type="button">
                         <a class="prev__btn-link" href="#">
                             Заказать звонок
                         </a>
@@ -82,7 +82,7 @@
             </div>
         </section>
 
-        <section class="main_aboutus aboutus">
+        <section id="section-aboutus" class="main_aboutus aboutus">
             <div class="container">
                 <div class="aboutus__inner">
                     <h2 class="aboutus__title">О нас</h2>
@@ -124,7 +124,7 @@
             </div>
         </section>
 
-        <section class="main__price price">
+        <section id="section-price" class="main__price price">
             <div class="container">
                 <div class="price__inner">
                     <h2 class="price__title"> Стоимость наших услуг</h2>
@@ -260,7 +260,7 @@
             </div>
         </section>
 
-        <section class="main__contact contact">
+        <section id="section-contact" class="main__contact contact">
             <div class="container">
                 <div class="contact__inner">
                     <h3 class="contact__title">
@@ -287,35 +287,64 @@
             </div>
         </section>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+        <h1 style="text-align: center;">ЧЕ ЕЩЕ ДОБАВИТЬ ПИШИТЕ</h1>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
+
+    <div class="line"></div>
+
     <footer class="footer">
         <div class="container">
-            <h1 class="footer__title">Pofacty Express</h>
-                <div class="footer__action">
-                    <button class="footer__btn">
-                        <a href="index.html#modal-call" data-toggle="modal" class="btn main-btn">Заказать звонок</a>
-                    </button>
-                    <div class="footer__contact ">
-                        <span class="footer__adress">Екатеринбург, ул. Софии Ковалевской, д.3</span>
-                        <a href="tel:+79326018418">+7 (932) 601-84-18</a>
+            <h1 class="footer__title">Pofacty Express</h1>
+            <div class="footer__action">
+                <button  data-modalOpen class="footer__btn">
+                    <a href="index.html#modal-call" data-toggle="modal" class="footer__btn-link">Заказать звонок</a>
+                </button>
+                <div class="footer__contact ">
+                    <span class="footer__adress">Екатеринбург, ул. Софии Ковалевской, д.3</span>
+                    <a class="footer__tel" href="tel:+79326018418">+7 (932) 601-84-18</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="row">
+                    <div class="copyright">
+                        © Все права защищены.
                     </div>
                 </div>
-                <div class="footer__bottom">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="copyright">© Все права защищены.
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="index.html#modal-privacy" data-toggle="modal" class="link-privacy">Политика
-                                конфиденциальности</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
         </div>
     </footer>
+
+    <div class="scroll-to-top">
+        <div class="scroll-to-top-link-wrapper">
+            <a class="scroll-to-top-link">
+                ᐱ
+            </a>
+        </div>
+    </div>
+
+    <div data-modal class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="#">
+                    <div data-modalClose class="modal__close">&times;</div>
+                    <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
+                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
+                    <input required placeholder="Ваша почта" name="email" type="email" class="modal__input">
+                    <input required maxlength="15" required placeholder="Ваш номер телефона" name="phone" type="phone"
+                        class="modal__input">
+                    <button class="btn btn_dark btn_min">Перезвонить мне</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 </body>
 <script src="JS/main.js"></script>
 
