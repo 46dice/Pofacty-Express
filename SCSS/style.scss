@@ -76,13 +76,28 @@ body {
 	color: $secondColor;
 }
 
+.opacity {
+	opacity: 0.8;
+	transition: 0.3s ease;
+}
+
+.opacity-default {
+	opacity: 1;
+}
+
+
+
 // -----------------------------HEADER---------------------------------
 // -----------------------------HEADER---------------------------------
 
 .header {
-	padding-top: 30px;
-	padding-bottom: 30px;
-
+	padding-top: 15px;
+	padding-bottom: 15px;
+	z-index: 100000;
+	background-color: #1c1717;
+	position: fixed;
+	width: 100vw;
+	transition: 0.3s ease;
 
 	.header__inner {
 		display: flex;
@@ -92,7 +107,8 @@ body {
 
 	.logo-link {
 		.header__logo-wrapper {
-			max-width: 250px;
+			max-width: 80px;
+			max-height: 100%;
 
 			&img {
 				max-width: 100%;
@@ -101,7 +117,7 @@ body {
 	}
 
 	.nav {
-		font-size: 12px;
+		font-size: 16px;
 		line-height: 30px;
 		white-space: nowrap;
 		display: flex;
@@ -112,12 +128,17 @@ body {
 			display: flex;
 			gap: 100px;
 			align-items: center;
+			justify-content: center;
+			flex-wrap: nowrap;
+			margin-left: 200px;
+			margin-right: 100px;
 		}
 
 		.nav__link {
 			transition: 0.3s ease;
 
 			& li {
+				font-size: 14px;
 				font-weight: $medium;
 			}
 
@@ -201,13 +222,10 @@ body {
 		margin-top: 200px;
 	}
 
-	.prev__img-wrapper {
-		max-width: 300px;
-		max-height: 200px;
-
-		& img {
-			max-width: 100%;
-		}
+	.prev__title {
+		@extend %title;
+		font-size: 52px;
+		white-space: nowrap;
 	}
 
 	.prev__text {
@@ -389,6 +407,7 @@ body {
 
 .contact {
 	padding-top: 120px;
+	padding-bottom: 120px;
 
 	.contact__inner {}
 
@@ -620,4 +639,11 @@ body {
 	font-size: 50px;
 	text-align: center;
 	color: red;
+}
+
+
+.block-animate {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: transform 0.5s, opacity 0.5s;
 }

@@ -1,7 +1,7 @@
 "use strict"
 
 //TABS
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     const parentTabs = document.querySelector('.price__nav');
     const tabs = document.querySelectorAll('.tabheader');
@@ -58,34 +58,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     //Стрелка наверх
-    const goTopBtn = document.querySelector('.scroll-to-top');
-
-    let toTopBtn = document.querySelector(".scroll-to-top");
-    let pageYOffset = 0;
-    let timeout;
-    window.onscroll = function () {
-        if (timeout) {
-            window.clearTimeout(timeout);
-        }
-        if (window.pageYOffset > 580) {
-            toTopBtn.style.display = "block";
-        } else {
-            toTopBtn.style.display = "none";
-        }
-        pageYOffset = window.pageYOffset;
-        timeout = window.setTimeout(function () {
-            if (window.pageYOffset === pageYOffset) {
-                toTopBtn.style.display = "none";
-            }
-        }, 2000);
-    }
-    // плавный скролл наверх
-    toTopBtn.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
+    // let toTopBtn = document.querySelector(".scroll-to-top");
+    // let pageYOffset = 0;
+    // let timeout;
+    // window.onscroll = function () {
+    //     if (timeout) {
+    //         window.clearTimeout(timeout);
+    //     }
+    //     if (window.pageYOffset > 580) {
+    //         toTopBtn.style.display = "block";
+    //     } else {
+    //         toTopBtn.style.display = "none";
+    //     }
+    //     pageYOffset = window.pageYOffset;
+    //     timeout = window.setTimeout(function () {
+    //         if (window.pageYOffset === pageYOffset) {
+    //             toTopBtn.style.display = "none";
+    //         }
+    //     }, 2000);
+    // }
+    // // плавный скролл наверх
+    // toTopBtn.addEventListener("click", function () {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth"
+    //     });
+    // });
 
 
     // window.addEventListener("scroll", trackScroll);
@@ -171,5 +169,52 @@ window.addEventListener('DOMContentLoaded', () => {
     }, { once: true });
 
 
+    //изменение хедера при скролле страницы
+
+    // window.onscroll = function () {
+    //     if (window.scrollTop() > 200) {
+    //         header.classList.add('opacity');
+    //     } else {
+    //         header.classList.remove('opacity-default');
+    //     }
+    // }
+
+    const header = document.querySelector('.header');
+    let isScrolled = false;
+
+    window.addEventListener('scroll', function () {
+        if (!isScrolled && window.scrollY > 200) {
+            header.classList.add('opacity');
+            header.classList.remove('opacity-default');
+            isScrolled = true;
+        } else if (isScrolled && window.scrollY <= 200) {
+            header.classList.add('opacity-default');
+            header.classList.remove('opacity');
+            isScrolled = false;
+        }
+    });
+
+
+    //Появление блоков при скролле анимация
+    let blocks = document.querySelectorAll('.block-animate');
+
+    function checkBlocksVisibility() {
+        let windowHeight = window.innerHeight;
+
+        blocks.forEach(block => {
+            let blockPosition = block.getBoundingClientRect().top;
+
+            if (blockPosition < windowHeight - 100) {
+                block.style.opacity = "1";
+                block.style.transform = "translateY(0)";
+            }
+        });
+    }
+
+    checkBlocksVisibility();
+
+    window.addEventListener('scroll', checkBlocksVisibility);
+
 
 });
+
