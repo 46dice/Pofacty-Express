@@ -13,28 +13,6 @@ body {
 	position: relative;
 }
 
-.scroll-to-top {
-	.scroll-to-top-link-wrapper {
-		.scroll-to-top-link {
-			cursor: pointer;
-			padding: 30px;
-			color: #2b2a2a;
-			background-color: #fff;
-			border-radius: 40%;
-			opacity: 0.5;
-			transition: 0.3s ease;
-
-			&:hover {
-				opacity: 0.8;
-			}
-		}
-	}
-
-	position: fixed;
-	bottom: 100px;
-	right: 50px;
-}
-
 .main {}
 
 .container {
@@ -76,17 +54,6 @@ body {
 	color: $secondColor;
 }
 
-.opacity {
-	opacity: 0.8;
-	transition: 0.3s ease;
-}
-
-.opacity-default {
-	opacity: 1;
-}
-
-
-
 // -----------------------------HEADER---------------------------------
 // -----------------------------HEADER---------------------------------
 
@@ -109,9 +76,12 @@ body {
 		.header__logo-wrapper {
 			max-width: 80px;
 			max-height: 100%;
+			filter:
+				drop-shadow(3px 3px 10px #464544);
 
 			&img {
 				max-width: 100%;
+
 			}
 		}
 	}
@@ -204,7 +174,7 @@ body {
 	height: 100vh;
 	background: rgba(0, 0, 0, .80);
 	background-blend-mode: darken;
-	background-image: url('../images/фонnew.png');
+	background-image: url('../images/фон.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -219,7 +189,7 @@ body {
 		justify-content: center;
 		flex-direction: column;
 		gap: 30px;
-		margin-top: 200px;
+		margin-top: 350px;
 	}
 
 	.prev__title {
@@ -646,4 +616,15 @@ body {
 	opacity: 0;
 	transform: translateY(50px);
 	transition: transform 0.5s, opacity 0.5s;
+}
+
+.opacity {
+	background-color: #1c1717c9;
+
+}
+
+.opacity-default {
+	background-color: #1c171700;
+	transition: 0.3s ease;
+	opacity: 1;
 }

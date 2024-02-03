@@ -92,25 +92,6 @@ body {
   position: relative;
 }
 
-.scroll-to-top {
-  position: fixed;
-  bottom: 100px;
-  right: 50px;
-}
-.scroll-to-top .scroll-to-top-link-wrapper .scroll-to-top-link {
-  cursor: pointer;
-  padding: 30px;
-  color: #2b2a2a;
-  background-color: #fff;
-  border-radius: 40%;
-  opacity: 0.5;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-.scroll-to-top .scroll-to-top-link-wrapper .scroll-to-top-link:hover {
-  opacity: 0.8;
-}
-
 .container {
   max-width: 1260px;
   margin: 0 auto;
@@ -147,16 +128,6 @@ body {
   color: rgb(253, 147, 75);
 }
 
-.opacity {
-  opacity: 0.8;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.opacity-default {
-  opacity: 1;
-}
-
 .header {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -181,6 +152,8 @@ body {
 .header .logo-link .header__logo-wrapper {
   max-width: 80px;
   max-height: 100%;
+  -webkit-filter: drop-shadow(3px 3px 10px #464544);
+          filter: drop-shadow(3px 3px 10px #464544);
 }
 .header .logo-link .header__logo-wrapperimg {
   max-width: 100%;
@@ -278,7 +251,7 @@ body {
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   background-blend-mode: darken;
-  background-image: url("../images/фонnew.png");
+  background-image: url("../images/фон.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -308,7 +281,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
-  margin-top: 200px;
+  margin-top: 350px;
 }
 .prev .prev__title {
   font-size: 52px;
@@ -641,4 +614,15 @@ body {
   transition: opacity 0.5s, -webkit-transform 0.5s;
   transition: transform 0.5s, opacity 0.5s;
   transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+.opacity {
+  background-color: rgba(28, 23, 23, 0.7882352941);
+}
+
+.opacity-default {
+  background-color: rgba(28, 23, 23, 0);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 1;
 }
