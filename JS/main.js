@@ -1,8 +1,8 @@
 "use strict"
 
-//TABS
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
 
+//TABS
     const parentTabs = document.querySelector('.price__nav');
     const tabs = document.querySelectorAll('.tabheader');
     const tabsContent = document.querySelectorAll('.tab-pane');

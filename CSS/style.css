@@ -170,6 +170,11 @@ body {
           align-items: center;
   text-transform: uppercase;
 }
+@media (max-width: 840px) {
+  .header .nav {
+    display: none;
+  }
+}
 .header .nav .nav__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,6 +190,13 @@ body {
       flex-wrap: nowrap;
   margin-left: 200px;
   margin-right: 100px;
+}
+@media (max-width: 1080px) {
+  .header .nav .nav__items {
+    margin-left: 50px;
+    margin-right: 40px;
+    gap: 40px;
+  }
 }
 .header .nav .nav__link {
   -webkit-transition: 0.3s ease;
@@ -208,6 +220,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 20px;
+}
+@media (max-width: 840px) {
+  .header .right-info {
+    display: none;
+  }
 }
 .header .right-info .right-info__number {
   font-weight: 500;
@@ -304,8 +321,65 @@ body {
 .aboutus .aboutus__descr {
   text-align: center;
   line-height: 25px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   display: block;
+}
+.aboutus .cards {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  margin-bottom: 70px;
+}
+.aboutus .cards .cards__card {
+  min-width: 400px;
+  border: 2px solid;
+  -o-border-image: linear-gradient(#cccccc, rgb(253, 147, 75), #2e2e2d);
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#cccccc), color-stop(rgb(253, 147, 75)), to(#2e2e2d));
+     border-image: linear-gradient(#cccccc, rgb(253, 147, 75), #2e2e2d);
+  border-image-slice: 1;
+  padding: 10px 20px 10px;
+  font-weight: 200;
+}
+@property --border-angle {
+  .aboutus .cards {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+}
+.aboutus .cards .card__title {
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.aboutus .cards .card__subtitle {
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+.aboutus .cards .card__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.aboutus .cards .card__icon svg {
+  max-width: 50px;
+  max-height: 100%;
+}
+* .aboutus .cards .card__icon svg path {
+  fill: #fff;
 }
 .aboutus .aboutus__services {
   display: -webkit-box;
@@ -386,6 +460,7 @@ body {
 }
 .price .price__tab-content .price__box {
   max-width: 370px;
+  min-width: 370px;
   padding: 20px 20px 20px 90px;
   background: #757474;
   -webkit-box-shadow: 0px 12px 46px rgba(255, 255, 255, 0.13);
@@ -424,7 +499,6 @@ body {
   position: relative;
 }
 .contact .contact__card-wrapperiframe {
-  position: absolute;
   z-index: 0;
 }
 .contact .contact__card-wrapper .contact-card {
