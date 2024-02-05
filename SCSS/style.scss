@@ -195,9 +195,6 @@ body {
 	}
 }
 
-
-
-
 // --------------------------------------------PREV-------------------------------------------
 // --------------------------------------------PREV-------------------------------------------
 
@@ -235,10 +232,6 @@ body {
 		@media (max-width:768px) {
 			font-size: 36px;
 			margin-bottom: 0;
-		}
-
-		@media (max-width:576px) {
-			font-size: 24px;
 		}
 	}
 
@@ -326,7 +319,6 @@ body {
 				min-width: 300px;
 				max-width: 300px;
 			}
-
 		}
 
 		@property --border-angle {
@@ -334,8 +326,6 @@ body {
 			inherits: true;
 			initial-value: 0turn;
 		}
-
-
 
 		.card__title {
 			font-weight: $light;
@@ -391,7 +381,9 @@ body {
 			border-radius: 30px;
 			overflow: hidden;
 			z-index: 1;
-
+			@media (max-width:1100px) {
+				display: none;
+			}
 			& video {
 				max-width: 450px;
 			}
@@ -442,9 +434,8 @@ body {
 		position: relative;
 
 		@media (max-width:568px) {
-			font-size: 12px;
+			font-size: 14px;
 			line-height: 115%;
-
 			margin-bottom: 15px;
 		}
 
@@ -467,7 +458,9 @@ body {
 	margin-top: -250px;
 	padding-bottom: 120px;
 
-	.price__inner {}
+	@media (max-width: 767px) {
+		padding-bottom: 10px;
+	}
 
 	.price__title {
 		@extend %title;
@@ -508,7 +501,7 @@ body {
 				white-space: nowrap;
 
 				@media (max-width:768px) {
-					font-size: 12px;
+					font-size: 14px;
 				}
 			}
 		}
@@ -590,8 +583,6 @@ body {
 				}
 			}
 		}
-
-		.active {}
 	}
 }
 
@@ -602,12 +593,15 @@ body {
 	padding-top: 120px;
 	padding-bottom: 120px;
 
-	.contact__inner {}
+	@media (max-width: 767px) {
+		padding-top: 50px;
+	}
 
 	.contact__title {
 		@extend %title;
 		margin-bottom: 50px;
-		@media (max-width:768px ) {
+
+		@media (max-width:768px) {
 			font-size: 32px;
 		}
 	}
@@ -617,6 +611,10 @@ body {
 
 		&iframe {
 			z-index: 10;
+
+			@media (max-width:620px) {
+				height: 330px;
+			}
 		}
 
 		.contact-card {
@@ -655,12 +653,13 @@ body {
 		color: $colorInTheContact;
 
 		@media (max-width: 1140px) {
-			font-size: 30px;
+			font-size: 35px;
 			white-space: nowrap;
 		}
 
 		@media (max-width: 870px) {
 			color: #fff;
+			display: none;
 		}
 	}
 
@@ -673,7 +672,7 @@ body {
 		white-space: nowrap;
 
 		@media (max-width: 1140px) {
-			font-size: 10px;
+			font-size: 12px;
 		}
 
 		@media (max-width: 870px) {
@@ -780,10 +779,6 @@ body {
 			font-size: 10px;
 		}
 	}
-
-	.footer__bottom {}
-
-	.row {}
 
 	.copyright {
 		opacity: 0.5;
@@ -908,9 +903,6 @@ body {
 		}
 	}
 
-	.btn_dark {}
-
-	.btn_min {}
 }
 
 

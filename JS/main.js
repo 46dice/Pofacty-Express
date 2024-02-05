@@ -164,5 +164,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //Запускает видео
+    document.querySelector('video').play();
 });
 

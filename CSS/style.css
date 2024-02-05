@@ -337,11 +337,6 @@ body {
     margin-bottom: 0;
   }
 }
-@media (max-width: 576px) {
-  .prev .prev__title {
-    font-size: 24px;
-  }
-}
 .prev .prev__text {
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -492,6 +487,11 @@ body {
   overflow: hidden;
   z-index: 1;
 }
+@media (max-width: 1100px) {
+  .aboutus .aboutus__services .aboutus__video-wrapper {
+    display: none;
+  }
+}
 .aboutus .aboutus__services .aboutus__video-wrapper video {
   max-width: 450px;
 }
@@ -533,7 +533,7 @@ body {
 }
 @media (max-width: 568px) {
   .aboutus .aboutus__text {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 115%;
     margin-bottom: 15px;
   }
@@ -550,6 +550,11 @@ body {
   padding-top: 250px;
   margin-top: -250px;
   padding-bottom: 120px;
+}
+@media (max-width: 767px) {
+  .price {
+    padding-bottom: 10px;
+  }
 }
 .price .price__title {
   margin-bottom: 40px;
@@ -596,7 +601,7 @@ body {
 }
 @media (max-width: 768px) {
   .price .price__nav li a {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .price .price__nav .tabheader__active {
@@ -672,9 +677,15 @@ body {
     font-size: 12px;
   }
 }
+
 .contact {
   padding-top: 120px;
   padding-bottom: 120px;
+}
+@media (max-width: 767px) {
+  .contact {
+    padding-top: 50px;
+  }
 }
 .contact .contact__title {
   margin-bottom: 50px;
@@ -689,6 +700,11 @@ body {
 }
 .contact .contact__card-wrapperiframe {
   z-index: 10;
+}
+@media (max-width: 620px) {
+  .contact .contact__card-wrapperiframe {
+    height: 330px;
+  }
 }
 .contact .contact__card-wrapper .contact-card {
   -webkit-box-shadow: 4px 4px 23px 24px rgba(34, 60, 80, 0.2);
@@ -736,13 +752,14 @@ body {
 }
 @media (max-width: 1140px) {
   .contact .contact-card__title {
-    font-size: 30px;
+    font-size: 35px;
     white-space: nowrap;
   }
 }
 @media (max-width: 870px) {
   .contact .contact-card__title {
     color: #fff;
+    display: none;
   }
 }
 .contact .contact-item {
@@ -755,7 +772,7 @@ body {
 }
 @media (max-width: 1140px) {
   .contact .contact-item {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media (max-width: 870px) {
@@ -981,6 +998,7 @@ body {
     width: 200px;
   }
 }
+
 .mraz {
   display: none;
   position: fixed;
