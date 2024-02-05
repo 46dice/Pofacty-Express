@@ -166,5 +166,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Запускает видео
     document.querySelector('video').play();
+
+
+    //Удаление в боксе блока "descr", если он пуст 
+    const priceBoxes = document.querySelectorAll('.price__box');
+    priceBoxes.forEach(box => {
+        const descrElement = box.querySelector('.price__box-descr');
+
+        if (!descrElement || descrElement.textContent.trim().length === 0) {
+            const titleElement = box.querySelector('.price__box-title');
+
+            if (titleElement) {
+                titleElement.style.cssText += `
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+            `;
+            }
+        }
+    });
 });
 
