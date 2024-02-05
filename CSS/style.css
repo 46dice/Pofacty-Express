@@ -623,6 +623,7 @@ body {
   box-shadow: 0px 12px 46px rgba(255, 255, 255, 0.13);
   margin: 0 15px 30px;
   position: relative;
+  border-radius: 8px;
 }
 @media (max-width: 830px) {
   .price .price__tab-content .price__box {
@@ -647,7 +648,10 @@ body {
   font-weight: bold;
   position: absolute;
   left: 10px;
-  top: 30px;
+  top: 50%;
+  -webkit-transform: translate(0px, -50%);
+      -ms-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
   color: rgb(253, 147, 75);
 }
 @media (max-width: 768px) {
@@ -1055,7 +1059,7 @@ body {
     width: 100%;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    background-color: #fff;
+    background-color: #ffffff;
   }
   .menu-burg::before,
   .menu-burg::after {
@@ -1084,9 +1088,9 @@ body {
             transform: translate(0, -500%) rotate(45deg);
   }
   .menu-burg._active::before {
-    -webkit-transform: translate(0, 356%) rotate(-45deg);
-        -ms-transform: translate(0, 356%) rotate(-45deg);
-            transform: translate(0, 356%) rotate(-45deg);
+    -webkit-transform: translate(0, 356%) rotate(-45eg);
+        -ms-transform: translate(0, 356%) rotate(-45eg);
+            transform: translate(0, 356%) rotate(-45eg);
   }
   .header__nav-body {
     position: fixed;
@@ -1095,7 +1099,7 @@ body {
     width: 100%;
     height: 100%;
     padding: 100px 30px 30px 30px;
-    background-color: rgba(0, 0, 0, 0.7058823529);
+    background-color: rgba(0, 0, 0, 0.9333333333);
     -webkit-transition: left 0.3s ease 0s;
     transition: left 0.3s ease 0s;
   }
