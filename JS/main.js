@@ -2,7 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
-//TABS
+    //TABS
     const parentTabs = document.querySelector('.price__nav');
     const tabs = document.querySelectorAll('.tabheader');
     const tabsContent = document.querySelectorAll('.tab-pane');
@@ -41,82 +41,28 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
+    //ЯКОРЯ
     const anchors = document.querySelectorAll('a[href*="#"]')
     for (let anchor of anchors) {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault()
+            e.preventDefault();
 
-            const blockID = anchor.getAttribute('href').substr(1)
+            const blockID = anchor.getAttribute('href').substr(1);
 
             document.getElementById(blockID).scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
-            })
-        })
+            });
+
+            if (iconBurger.classList.contains('_active')) {
+                document.body.classList.remove('_lock');
+                iconBurger.classList.remove('_active');
+                menuBody.classList.remove('_active');
+            }
+        });
     }
 
-
-    //Стрелка наверх
-    // let toTopBtn = document.querySelector(".scroll-to-top");
-    // let pageYOffset = 0;
-    // let timeout;
-    // window.onscroll = function () {
-    //     if (timeout) {
-    //         window.clearTimeout(timeout);
-    //     }
-    //     if (window.pageYOffset > 580) {
-    //         toTopBtn.style.display = "block";
-    //     } else {
-    //         toTopBtn.style.display = "none";
-    //     }
-    //     pageYOffset = window.pageYOffset;
-    //     timeout = window.setTimeout(function () {
-    //         if (window.pageYOffset === pageYOffset) {
-    //             toTopBtn.style.display = "none";
-    //         }
-    //     }, 2000);
-    // }
-    // // плавный скролл наверх
-    // toTopBtn.addEventListener("click", function () {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth"
-    //     });
-    // });
-
-
-    // window.addEventListener("scroll", trackScroll);
-    // // обработчик на нажатии
-    // goTopBtn.addEventListener("click", goTop);
-
-    // function trackScroll() {
-    //     // вычисляем положение от верхушки страницы
-    //     const scrolled = window.pageYOffset;
-    //     // считаем высоту окна браузера
-    //     const coords = document.documentElement.clientHeight;
-    //     // если вышли за пределы первого окна
-    //     if (scrolled > coords) {
-    //         // кнопка появляется
-    //         goTopBtn.classList.add("show");
-    //     } else {
-    //         // иначе исчезает
-    //         goTopBtn.classList.remove("show");
-    //     }
-    // }
-
-    // function goTop() {
-    //     // пока не вернулись в начало страницы
-    //     if (window.pageYOffset > 0) {
-    //         // скроллим наверх
-    //         window.scrollBy(0, -75); // второй аргумент - скорость
-    //         setTimeout(goTop, 0); // входим в рекурсию
-    //     }
-    // }
-
-
     //MODAL
-
     const modalOpenBtn = document.querySelectorAll('[data-modalOpen]'),
         modal = document.querySelector('[data-modal]'),
         mrazBtn = document.querySelector('[data-btn-post'),
@@ -136,8 +82,6 @@ window.addEventListener('DOMContentLoaded', () => {
         selector.style.display = 'none';
         document.body.style.overflow = '';
     };
-
-
 
     modalOpenBtn.forEach(item => {
         item.addEventListener('click', () => {
@@ -170,15 +114,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     //изменение хедера при скролле страницы
-
-    // window.onscroll = function () {
-    //     if (window.scrollTop() > 200) {
-    //         header.classList.add('opacity');
-    //     } else {
-    //         header.classList.remove('opacity-default');
-    //     }
-    // }
-
     const header = document.querySelector('.header');
     let isScrolled = false;
 
@@ -215,6 +150,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', checkBlocksVisibility);
 
+
+    //БУРГЕР
+
+    const iconBurger = document.querySelector('.menu-burg');
+    const menuBody = document.querySelector('.header__nav-body');
+
+    if (iconBurger) {
+        iconBurger.addEventListener('click', (e) => {
+            document.body.classList.toggle('_lock');
+            iconBurger.classList.toggle('_active');
+            menuBody.classList.toggle('_active');
+        });
+    }
 
 });
 

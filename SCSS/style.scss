@@ -68,16 +68,20 @@ body {
 
 	.header__inner {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
+		justify-content: space-between;
 	}
 
 	.logo-link {
 		.header__logo-wrapper {
 			max-width: 80px;
 			max-height: 100%;
-			filter:
-				drop-shadow(3px 3px 10px #464544);
+
+			@media (max-width:576px) {
+				max-width: 60px;
+			}
+
+			filter: drop-shadow(3px 3px 10px #464544);
 
 			&img {
 				max-width: 100%;
@@ -86,7 +90,23 @@ body {
 		}
 	}
 
-	.header__nav-right {}
+	.header__nav-body {
+		display: flex;
+		justify-content: space-between;
+		gap: 200px;
+
+		@media (max-width:1100px) {
+			gap: 100px;
+		}
+
+		@media (max-width:950px) {
+			gap: 50px;
+		}
+
+		@media (max-width:840px) {
+			display: block;
+		}
+	}
 
 	.nav {
 		font-size: 16px;
@@ -95,11 +115,7 @@ body {
 		display: flex;
 		align-items: center;
 		text-transform: uppercase;
-
-
-		@media (max-width:840px) {
-			display: none;
-		}
+		align-self: flex-start;
 
 		.nav__items {
 			display: flex;
@@ -107,10 +123,6 @@ body {
 			align-items: center;
 			justify-content: center;
 			flex-wrap: nowrap;
-			margin-left: 200px;
-			margin-right: 100px;
-
-
 
 			@media (max-width:1080px) {
 				margin-left: 50px;
@@ -134,21 +146,20 @@ body {
 		}
 	}
 
+	.right-info__number-burg-button {
+		display: none;
+	}
+
 	.right-info {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 20px;
 
-		@media (max-width:840px) {
-			display: none;
-		}
-
 		.right-info__number {
 			font-weight: $medium;
 			font-size: 20px;
 			position: relative;
-
 
 			&::after {
 				position: absolute;
@@ -210,12 +221,25 @@ body {
 		flex-direction: column;
 		gap: 30px;
 		margin-top: 350px;
+
+		@media (max-width:768px) {
+			gap: 20px;
+		}
 	}
 
 	.prev__title {
 		@extend %title;
 		font-size: 52px;
 		white-space: nowrap;
+
+		@media (max-width:768px) {
+			font-size: 36px;
+			margin-bottom: 0;
+		}
+
+		@media (max-width:576px) {
+			font-size: 24px;
+		}
 	}
 
 	.prev__text {
@@ -223,12 +247,25 @@ body {
 		letter-spacing: 0.5px;
 		font-size: 19px;
 		line-height: 30px;
+
+		@media (max-width:768px) {
+			font-size: 14px;
+		}
+
+		@media (max-width:576px) {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
 	}
 
 	.prev__btn {
 
 		.prev__btn-link {
-			@extend %btnColor
+			@extend %btnColor;
+
+			@media (max-width:768px) {
+				font-size: 12px;
+			}
 		}
 	}
 }
@@ -245,6 +282,11 @@ body {
 	.aboutus__title {
 		padding-left: 20px;
 		@extend %title;
+
+		@media (max-width:652px) {
+			font-size: 36px;
+		}
+
 	}
 
 	.aboutus__descr {
@@ -252,6 +294,10 @@ body {
 		line-height: 25px;
 		margin-bottom: 50px;
 		display: block;
+
+		@media (max-width:652px) {
+			font-size: 12px;
+		}
 	}
 
 	.cards {
@@ -262,14 +308,25 @@ body {
 		grid-gap: 20px;
 		margin-bottom: 70px;
 
+		@media (max-width:652px) {
+			grid-template-columns: auto;
+			grid-template-rows: auto auto auto auto;
+
+		}
+
 		.cards__card {
 			min-width: 400px;
 			border: 2px solid;
 			border-image: linear-gradient(#cccccc, $secondColor, #2e2e2d);
 			border-image-slice: 1;
-
 			padding: 10px 20px 10px;
 			font-weight: $extralight;
+
+			@media (max-width:992px) {
+				min-width: 300px;
+				max-width: 300px;
+			}
+
 		}
 
 		@property --border-angle {
@@ -285,15 +342,20 @@ body {
 			font-size: 24px;
 			text-align: center;
 			margin-bottom: 10px;
+
+
 		}
 
 		.card__subtitle {
 			font-size: 16px;
-
 			text-align: center;
 			white-space: nowrap;
 			margin-bottom: 10px;
 
+			@media (max-width:992px) {
+				line-height: 15px;
+				white-space: inherit;
+			}
 		}
 
 		.card__icon {
@@ -315,14 +377,25 @@ body {
 	.aboutus__services {
 		display: flex;
 		justify-content: space-between;
+		gap: 30px;
+
+		@media (max-width:1100px) {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
 
 		.aboutus__video-wrapper {
-			max-width: 450px;
 			position: relative;
 			background-color: $bgMain;
 			border-radius: 30px;
 			overflow: hidden;
 			z-index: 1;
+
+			& video {
+				max-width: 450px;
+			}
+
 
 			.shadow {
 				position: absolute;
@@ -333,18 +406,34 @@ body {
 				box-shadow: 0px 4px 79px 33px rgba(34, 60, 80, 0.87) inset;
 				top: 0;
 				left: 0;
-			}
-		}
 
+				@media (max-width:1100px) {}
+			}
+
+
+		}
+	}
+
+	.aboutus__items {
+		padding-left: 20px;
 	}
 
 	.aboutus__subtitle {
-		padding-left: 20px;
+		padding-left: 30px;
 		font-size: 32px;
 		text-transform: uppercase;
 		font-weight: $extralight;
 		letter-spacing: 3px;
 		margin-bottom: 15px;
+
+		@media (max-width:1100px) {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		@media (max-width:568px) {
+			font-size: 28px;
+		}
 	}
 
 	.aboutus__text {
@@ -352,13 +441,19 @@ body {
 		padding-left: 5px;
 		position: relative;
 
+		@media (max-width:568px) {
+			font-size: 12px;
+			line-height: 115%;
+
+			margin-bottom: 15px;
+		}
+
 		&::before {
 			color: $secondColor;
 			position: absolute;
 			top: 0;
 			left: -15px;
 			content: '✓';
-
 		}
 	}
 }
@@ -377,6 +472,10 @@ body {
 	.price__title {
 		@extend %title;
 		margin-bottom: 40px;
+
+		@media (max-width:768px) {
+			font-size: 32px;
+		}
 	}
 
 	.price__nav {
@@ -384,13 +483,33 @@ body {
 		gap: 30px;
 		margin-bottom: 30px;
 
+		@media (max-width:1010px) {
+			gap: 15px;
+		}
+
+		@media (max-width:960px) {
+			flex-wrap: wrap;
+		}
+
 		& li {
+			@media (max-width:960px) {
+				margin-bottom: 10px;
+			}
+
+			@media (max-width:350px) {
+				margin-bottom: 5px;
+			}
 
 			& a {
 				background-color: #2b2a2a;
 				letter-spacing: normal;
 				padding: 5px 10px 5px 10px;
 				border-radius: 5px;
+				white-space: nowrap;
+
+				@media (max-width:768px) {
+					font-size: 12px;
+				}
 			}
 		}
 
@@ -420,6 +539,21 @@ body {
 			margin: 0 15px 30px;
 			position: relative;
 
+			@media (max-width:830px) {
+				margin: 0 7px 15px;
+			}
+
+			@media (max-width:420px) {
+				max-width: 300px;
+				min-width: 300px;
+				margin: 0 5px 10px;
+			}
+
+			@media (max-width:350px) {
+				max-width: 250px;
+				min-width: 250px;
+			}
+
 			.price__box-newprice {
 				font-size: 15px;
 				font-weight: bold;
@@ -427,6 +561,10 @@ body {
 				left: 10px;
 				top: 30px;
 				color: $secondColor;
+
+				@media (max-width:768px) {
+					font-size: 12px;
+				}
 
 				& span {
 					color: $secondColor;
@@ -438,18 +576,24 @@ body {
 				font-size: 16px;
 				font-weight: bold;
 				margin-bottom: 5px;
+
+				@media (max-width:768px) {
+					font-size: 12px;
+				}
 			}
 
 			.price__box-descr {
 				font-weight: $extralight;
+
+				@media (max-width:768px) {
+					font-size: 12px;
+				}
 			}
 		}
 
 		.active {}
 	}
 }
-
-
 
 // ------------------------------------CONTACTS-------------------------
 // ------------------------------------CONTACTS-------------------------
@@ -463,14 +607,16 @@ body {
 	.contact__title {
 		@extend %title;
 		margin-bottom: 50px;
-
+		@media (max-width:768px ) {
+			font-size: 32px;
+		}
 	}
 
 	.contact__card-wrapper {
 		position: relative;
 
 		&iframe {
-			z-index: 0;
+			z-index: 10;
 		}
 
 		.contact-card {
@@ -484,6 +630,21 @@ body {
 			top: 50px;
 			right: 50px;
 			padding: 30px 30px 30px 30px;
+
+			@media (max-width: 870px) {
+				margin-top: 30px;
+				top: 0;
+				left: 0;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				background-color: $bgMain;
+				border: 2px solid;
+				border-image: linear-gradient(#a7a5a5, $secondColor, #2e2e2d);
+				border-image-slice: 1;
+			}
 		}
 	}
 
@@ -492,6 +653,15 @@ body {
 		font-weight: $medium;
 		margin-bottom: 15px;
 		color: $colorInTheContact;
+
+		@media (max-width: 1140px) {
+			font-size: 30px;
+			white-space: nowrap;
+		}
+
+		@media (max-width: 870px) {
+			color: #fff;
+		}
 	}
 
 	.contact-item {
@@ -500,6 +670,15 @@ body {
 		line-height: 2;
 		font-weight: $extralight;
 		color: $colorInTheContact;
+		white-space: nowrap;
+
+		@media (max-width: 1140px) {
+			font-size: 10px;
+		}
+
+		@media (max-width: 870px) {
+			color: #fff;
+		}
 
 		& a {
 			color: $secondColor;
@@ -514,6 +693,10 @@ body {
 		& span {
 			font-weight: $medium;
 			color: $colorInTheContact;
+
+			@media (max-width: 870px) {
+				color: #fff;
+			}
 		}
 	}
 
@@ -541,33 +724,42 @@ body {
 		margin-bottom: 40px;
 		@extend %title;
 		font-size: 30px;
+
+		@media (max-width:620px) {
+			font-size: 25px;
+		}
 	}
 
 	.footer__action {
 		display: flex;
 		gap: 50px;
+
+		@media (max-width:620px) {
+			gap: 15px;
+		}
 	}
 
 	.footer__btn {
 		margin-bottom: 30px;
 		transition: 0.4s ease;
 
-
 		.footer__btn-link {
 			transition: 0.4s ease;
 			@extend %btnColor;
 			background-color: $secondColor;
 			border: 1px solid $secondColor;
+			white-space: nowrap;
+
+			@media (max-width:620px) {
+				font-size: 10px;
+				padding: 10px 15px 10px 15px;
+			}
 
 			&:hover {
 				border: 1px solid $secondColor;
 			}
-
-
 		}
-
 	}
-
 
 	.footer__contact {
 		display: flex;
@@ -575,10 +767,18 @@ body {
 		gap: 10px;
 	}
 
-	.footer__adress {}
+	.footer__adress {
+		@media (max-width:620px) {
+			font-size: 10px;
+		}
+	}
 
 	.footer__tel {
 		color: $secondColor;
+
+		@media (max-width:620px) {
+			font-size: 10px;
+		}
 	}
 
 	.footer__bottom {}
@@ -587,6 +787,10 @@ body {
 
 	.copyright {
 		opacity: 0.5;
+
+		@media (max-width:620px) {
+			font-size: 10px;
+		}
 	}
 }
 
@@ -613,6 +817,14 @@ body {
 	.modal__dialog {
 		max-width: 500px;
 		margin: 150px auto;
+
+		@media (max-width: 520px) {
+			max-width: 400px;
+		}
+
+		@media (max-width: 420px) {
+			max-width: 300px;
+		}
 	}
 
 	.modal__content {
@@ -645,6 +857,10 @@ body {
 		font-size: 22px;
 		text-transform: uppercase;
 		color: black;
+
+		@media (max-width: 520px) {
+			font-size: 16px;
+		}
 	}
 
 	.modal__input {
@@ -660,6 +876,16 @@ body {
 		padding: 0 20px;
 		outline: 0;
 		color: black;
+
+		@media (max-width: 520px) {
+			font-size: 14px;
+		}
+
+		@media (max-width: 420px) {
+			width: 200px;
+			font-size: 10px;
+		}
+
 	}
 
 	.btn {
@@ -670,6 +896,16 @@ body {
 		background-color: $secondColor;
 		padding: 10px 5px 10px 5px;
 		@extend %btnColor;
+
+		@media (max-width: 520px) {
+			font-size: 14px;
+		}
+
+		@media (max-width: 420px) {
+			padding: 15px 2px 15px 2px;
+			font-size: 10px;
+			width: 200px;
+		}
 	}
 
 	.btn_dark {}
@@ -705,4 +941,126 @@ body {
 	background-color: #1c171700;
 	transition: 0.3s ease;
 	opacity: 1;
+}
+
+.menu-burg {
+	display: none;
+}
+
+
+//МЕДИА ЗАПРОС ДЛЯ МЕНЮ ХЕДЕР
+@media (max-width: 840px) {
+	.menu-burg {
+		display: block;
+		z-index: 10500;
+		position: relative;
+		width: 40px;
+		height: 18px;
+		cursor: pointer;
+		padding: 12px;
+	}
+
+	.menu-burg::before,
+	.menu-burg span,
+	.menu-burg::after {
+		position: absolute;
+		left: 0;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease 0s;
+		background-color: #fff;
+	}
+
+	.menu-burg::before,
+	.menu-burg::after {
+		content: "";
+	}
+
+	.menu-burg::before {
+		top: 0;
+	}
+
+	.menu-burg::after {
+		bottom: 0;
+	}
+
+	.menu-burg span {
+		top: 50%;
+		transform: scale(1) translate(0%, -50%);
+	}
+
+	.menu-burg._active span {
+		transform: scale(0) translate(0%, -50%);
+	}
+
+	.menu-burg._active::after {
+		transform: translate(0, -500%) rotate(45deg);
+	}
+
+	.menu-burg._active::before {
+		transform: translate(0, 356%) rotate(-45deg);
+
+	}
+
+	.header__nav-body {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		padding: 100px 30px 30px 30px;
+		background-color: #000000b4;
+		transition: left 0.3s ease 0s;
+
+		.nav {
+			margin-top: 50px;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.nav__items {
+			flex-direction: column;
+		}
+
+		.right-info {
+			align-items: center;
+			justify-content: center;
+			padding: 50px 30px 30px 30px;
+		}
+
+		a {
+			padding: 15px;
+		}
+
+		.right-info__number,
+		.right-info__icon-link {
+			display: none;
+		}
+
+		.right-info__number-burg-button {
+			display: block;
+			font-size: 12px;
+			line-height: 1.55;
+			font-weight: $medium;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			border: solid 1px #fff;
+			border-radius: 30px;
+			padding: 15px 35px 15px 35px;
+			transition: 0.3s ease;
+
+			&:hover {
+				border-color: $secondColor;
+				color: $secondColor;
+			}
+		}
+	}
+
+	.header__nav-body._active {
+		left: 0;
+	}
+
+	._lock {
+		overflow: hidden;
+	}
 }
