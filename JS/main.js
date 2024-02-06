@@ -64,14 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //MODAL
     const modalOpenBtn = document.querySelectorAll('[data-modalOpen]'),
-        modal = document.querySelector('[data-modal]'),
-        mrazBtn = document.querySelector('[data-btn-post'),
-        mraz = document.querySelector('.mraz');
-
-    mrazBtn.addEventListener('click', e => {
-        mraz.style.display = 'block';
-    });
-
+        modal = document.querySelector('[data-modal]');
 
     function openModal(selector) {
         selector.style.display = 'block';
@@ -186,4 +179,63 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+//Отправка формы в телеграм
+const TELEGRAM_BOT_TOKEN = '6478906354:AAGvWt1mVUyFNvNjpkrCoZuaioaidwQlvPo';
+const TELEGRAM_CHAT_ID = '@PofactyExpress_Bot';
+const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+async function sendEmailTelegram(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formBtn = document.querySelector('.form__submit-button');
+    const formSendResult = document.querySelector('.form__send-result');
+    formSendResult.textContent = '';
+
+    const { name, email, phone } = Object.fromEntries(new FormData(form).entries());
+
+    const textFinally = `Поступила новая заявка!\nИмя клиента: ${name};\nEmail: ${email};\nТелефон: ${phone}\n`
+
+    try {
+        formBtn.textContent = 'Loading...';
+
+        const response = await fetch(API, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: textFinally,
+            })
+        });
+
+        if (response.ok) {
+            formSendResult.textContent = 'Спасибо, что выбираете нас! Мы свяжемся с вами в ближайшее время!';
+            formSendResult.style.cssText = `
+            margin-top: 8px;
+            text-align: center;
+            color: #000;
+            font-family: $montserrat;
+        `;
+            form.reset();
+        } else {
+            throw new Error(response.statusText);
+        }
+    } catch (error) {
+        console.error(error);
+        formSendResult.textContent = 'Анкета не отправлена! Попробуйте, пожалуйста, позже.';
+        formSendResult.style.cssText = `
+            margin-top: 8px;
+            text-align: center;
+            color: red;
+            font-family: $montserrat;
+        `;
+        form.reset();
+    } finally {
+        formBtn.textContent = 'Перезвонить мне';
+    }
+}
+
 

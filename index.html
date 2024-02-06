@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="images/logo/cherny_s_fonom.svg">
     <title>Pofacty Express</title>
     <link rel="stylesheet" href="CSS/styleCrossBr.css">
     <link rel="stylesheet" href="CSS/style.min.css">
@@ -109,8 +110,8 @@
                                 Открыть магазин на маркетплейсе
                             </h6>
                             <div class="card__icon">
-                                <?xml version="1.0" ?><svg width="548.176px"
-                                height="50px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <?xml version="1.0" ?><svg width="548.176px" height="50px" viewBox="0 0 512 512"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <title />
                                     <g data-name="1" id="_1">
                                         <path
@@ -200,11 +201,10 @@
                             <div class="card__icon">
                                 <?xml version="1.0" encoding="iso-8859-1"?>
                                 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                                <svg width="548.176px"
-                                height="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 162.785 162.785" style="enable-background:new 0 0 162.785 162.785;"
-                                    xml:space="preserve">
+                                <svg width="548.176px" height="50px" version="1.1" id="Capa_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 162.785 162.785"
+                                    style="enable-background:new 0 0 162.785 162.785;" xml:space="preserve">
                                     <g>
                                         <g>
                                             <path style="fill:#f9f8fa;" d="M158.983,160.394H86.305c-2.101,0-3.802-1.7-3.802-3.802c0-2.101,1.7-3.802,3.802-3.802h68.342
@@ -269,9 +269,9 @@
                                 Инфографику
                             </h6>
                             <div class="card__icon">
-                                <?xml version="1.0" ?><svg width="548.176px"
-                                height="50px" style="enable-background:new 0 0 32 32;" version="1.1"
-                                    viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                <?xml version="1.0" ?><svg width="548.176px" height="50px"
+                                    style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32"
+                                    xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="Guides" />
                                     <g id="_x32_0" />
@@ -531,19 +531,20 @@
     <div data-modal class="modal">
         <div class="modal__dialog">
             <div class="modal__content">
-                <form action="#">
+                <form action="" class="form" onsubmit="sendEmailTelegram(event)">
                     <div data-modalClose class="modal__close">&times;</div>
                     <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
-                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
-                    <input required placeholder="Ваша почта" name="email" type="email" class="modal__input">
+                    <input required maxlength="40" placeholder="Ваше имя" name="name" type="text" class="modal__input">
+                    <input required maxlength="40" placeholder="Ваша почта" name="email" type="email"
+                        class="modal__input">
                     <input required maxlength="15" required placeholder="Ваш номер телефона" name="phone" type="phone"
                         class="modal__input">
-                    <button data-btn-post class="btn btn_dark btn_min">Перезвонить мне</button>
+                    <button type="submit" data-btn-post class="form__submit-button btn">Перезвонить мне</button>
+                    <div class="form__send-result"></div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="mraz">куда тыкаешь мразь еще не готово</div>
 </body>
 <script src="JS/main.js"></script>
 
