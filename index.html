@@ -538,7 +538,7 @@
                     <input required maxlength="40" placeholder="Ваша почта" name="email" type="email"
                         class="modal__input">
                     <input required maxlength="15" required placeholder="Ваш номер телефона" name="phone" type="phone"
-                        class="modal__input">
+                        class="modal__input" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                     <button type="submit" data-btn-post class="form__submit-button btn">Перезвонить мне</button>
                     <div class="form__send-result"></div>
                 </form>

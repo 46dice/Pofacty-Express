@@ -195,19 +195,21 @@ async function sendEmailTelegram(event) {
 
     const { name, email, phone } = Object.fromEntries(new FormData(form).entries());
 
-    const textFinally = `Поступила новая заявка!\nИмя клиента: ${name};\nEmail: ${email};\nТелефон: ${phone}\n`
+    const textFinally = `✅ Поступила новая заявка!\n\nИмя клиента: <code>${name}</code>;\nEmail: <code>${email}</code>;\nТелефон: <code>${phone}</code>\n`
 
     try {
         formBtn.textContent = 'Loading...';
 
         const response = await fetch(API, {
             method: 'POST',
+            parse_mode: "html",
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 chat_id: TELEGRAM_CHAT_ID,
                 text: textFinally,
+                parse_mode: "html",
             })
         });
 

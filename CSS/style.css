@@ -87,6 +87,11 @@ button {
   letter-spacing: 1px;
 }
 
+pre {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #141414;
   position: relative;
@@ -325,7 +330,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
-  margin-top: 350px;
+  margin-top: 40vh;
 }
 @media (max-width: 768px) {
   .prev .prev__inner {
