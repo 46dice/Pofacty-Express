@@ -157,8 +157,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    //Запускает видео
-    document.querySelector('video').play();
 
 
     //Удаление в боксе блока "descr", если он пуст 
@@ -178,7 +176,13 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
 });
+
+//Запускает видео
+// const vid = document.getElementById('video');
+// vid.autoplay = true;
+// vid.load();
 
 //Отправка формы в телеграм
 const TELEGRAM_BOT_TOKEN = '6478906354:AAGvWt1mVUyFNvNjpkrCoZuaioaidwQlvPo';
